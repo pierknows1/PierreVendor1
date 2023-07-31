@@ -4,8 +4,8 @@ using PierreVendor.Models;
 
 namespace PierreVendor.Controllers
 {
-    public class OrderController : Controller
-    {
+  public class OrderController : Controller
+  {
     [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {

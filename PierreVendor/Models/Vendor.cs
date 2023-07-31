@@ -26,9 +26,9 @@ namespace PierreVendor.Models
                 return _instances;
             }
         
-            public static Vendor Find (int vendorId)
+            public static Vendor Find (int searchId)
             {
-                return _instances[vendorId - 1];
+                return _instances[searchId - 1];
             }
             public void AddOrder (Order order)
             {

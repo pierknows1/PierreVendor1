@@ -43,6 +43,25 @@ namespace PierreVendor.Tests
             int result = newVendor.Id;
             Assert.AreEqual(1, result);
         }
+
+        [TestMethod]
+        public void Find_ReturnsOrder_Order()
+        {
+            Vendor newVendor1 = new Vendor("VendorName1", "VendorDescription1");
+            Vendor newVendor2 = new Vendor("VendorName2", "VendorDescription2");
+            Assert.AreEqual(newVendor2, Vendor.Find(2));
+        }
+
+        [TestMethod]
+        public void AddOrder_AddOrderToVendorsList_List()
+        {
+            Order newOrder = new Order("today", "unpaid", "Order", "Order");
+            Vendor newVendor = new Vendor("two", "strings");
+            newVendor.AddOrder(newOrder);
+            Assert.IsTrue(newVendor.Orders.Contains(newOrder));
+        }    
+
+
         [TestMethod]
         public void GetAll_ReturnsAllVendorsItems_List()
         {

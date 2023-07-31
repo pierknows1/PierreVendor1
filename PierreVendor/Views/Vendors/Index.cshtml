@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierreVendor.Models;
+
+<h2>Vendor List</h2>
+
+@if (@Model.Count == 0)
+{
+  <h4>There are No vendors. Please go to <a href="/vendors/new">here</a> to add a new vendor</h4>
+}
+<ul>
+  @foreach (Vendor vendor in Model)
+  {
+    <li>
+      <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
+    </li>
+  }
+</ul>
+
+<p><a href='/'>Back home</a></p>
