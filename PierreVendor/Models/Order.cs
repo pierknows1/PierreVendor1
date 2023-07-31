@@ -6,15 +6,19 @@ namespace PierreVendor.Models
    {
         public string MyOrder { get; set; }
         public string Description { get; set; }
+        public string Price { get; set; }
         public int Id { get; }
         private static List<Order> _instances = new List<Order> { };
-        public Order (string orderTest, string orderDescription )
+
+        public Order (string orderMyOrder, string orderDescription, string orderPrice)
         {
-            MyOrder = orderTest;
+            MyOrder = orderMyOrder;
             Description = orderDescription;
+            Price = orderPrice;
             _instances.Add(this);
             Id = _instances.Count;
         }
+
         public static List<Order> GetAll()
         {
             return _instances;

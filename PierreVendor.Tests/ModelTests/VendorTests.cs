@@ -21,7 +21,7 @@ namespace PierreVendor.Tests
         }
     
         [TestMethod]
-        public void Vendorname_ChecksName_Vendor()
+        public void VendorName_ChecksNameVendor_String()
         {
             string vendorName = "Vendor's name";
             Vendor newVendor = new Vendor(vendorName, "Description");
@@ -29,22 +29,22 @@ namespace PierreVendor.Tests
         }
 
         [TestMethod]
-        public void VendorDescription_CreateDescription_Vendor()
+        public void VendorDescription_CreateDescriptionOfVendor_String()
         {
-            string vendorDescription = "Description";
+            string vendorDescription = "Describe Vendor";
             Vendor newVendor = new Vendor("Vendor's name", vendorDescription);
             Assert.AreEqual(vendorDescription, newVendor.Description);
         }
 
         [TestMethod]
-        public void GetVendorId_RetunId_Int()
+        public void GetVendorId_ReturnId_Int()
         {
-            Vendor newVendor = new Vendor ("vendorName", "Description");
+            Vendor newVendor = new Vendor ("vendorName", "vendorDescription");
             int result = newVendor.Id;
             Assert.AreEqual(1, result);
         }
         [TestMethod]
-        public void GetAll_ReturnsAllVendors_List()
+        public void GetAll_ReturnsAllVendorsItems_List()
         {
             string vendor1 = "Vendor1";
             string vendor2 = "Vendor2";
@@ -56,6 +56,5 @@ namespace PierreVendor.Tests
             
             CollectionAssert.AreEqual(newList, result);
         }
-
     }
 }
